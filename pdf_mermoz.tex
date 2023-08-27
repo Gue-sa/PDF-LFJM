@@ -12,6 +12,9 @@
 \usepackage{color}
 \usepackage{systeme}
 
+\newcounter{exnumber}
+\addtocounter{exnumber}{1}
+
 \newlength\chapnumb
 \setlength\chapnumb{3cm}
 
@@ -281,7 +284,7 @@
 		
 			\subsection{Niveau 1}
 			
-				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Une suite périodique]
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Une suite périodique]
 				\paragraph{Consigne}
 					On fixe un entier naturel impair $a$. On considère une suite d'entiers naturels non nuls $(u_n)_{n \in \mathbb{N}}$ vérifiant, pour tout $n \in \mathbb{N}$ :
 					\vspace{3mm}
@@ -308,6 +311,7 @@
 						\item On pourra finalement utiliser le principe des tiroirs en gardant en tête que l'on étudie une suite.
 					\end{itemize}
 				\end{tcolorbox}
+				\addtocounter{exnumber}{1}
 		
 			\subsection{Niveau 2}
 		
@@ -344,7 +348,7 @@
 		\section{Sommes}	
 		
 			\subsection{Niveau 1}
-				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme et fonctions trigonométriques]
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Somme et fonctions trigonométriques]
 				\paragraph{Consigne}
 					Soit $\theta \in \mathbb{R}$, $\forall n \in \mathbb{N}$, on a :\\
 					\begin{center}
@@ -362,8 +366,9 @@
 						\item On remarque que : $\sin (a+b)- \sin (a-b)=2 \sin (b) \cos (a)$.
 					\end{itemize}
 				\end{tcolorbox}
+				\addtocounter{exnumber}{1}
 				
-				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme et binôme]
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Somme et binôme]
 				\paragraph{Consigne}
 					Soit $n \in \mathbb{N}, \forall p \in [\![1;n]\!]$ on a :
 					\begin{center}
@@ -378,8 +383,9 @@
 						\item On pourra s'aider du triangle de Pascal et du binôme de Newton.
 					\end{itemize}
 				\end{tcolorbox}
+				\addtocounter{exnumber}{1}
 				
-				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme\underline{s} et binôme]
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Somme\underline{s} et binôme]
 				\paragraph{Consigne}
 					$\forall n \in \mathbb{N^*}$, on a :
 					\begin{center}
@@ -395,9 +401,10 @@
 						\item Il sera en l'occurence intéressant de dériver l'égalité ainsi obtenue.
 					\end{itemize}
 				\end{tcolorbox}
+				\addtocounter{exnumber}{1}
 			
 			\subsection{Niveau 2}
-				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme et valeur absolue]
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Somme et valeur absolue]
 					\paragraph{Consigne}
 						$\forall n \in \mathbb{N^*}$, on a :\\
 							\begin{center}
@@ -416,8 +423,9 @@
 							\item Il est possible de séparer la deuxième somme en deux sommes distinctes que l'on choisira judicieusement (s'aider de l'indication précédente).
 						\end{itemize}
 				\end{tcolorbox}
+				\addtocounter{exnumber}{1}
 				
-				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme et trigonométrie]
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Somme et trigonométrie]
 					\paragraph{Consigne}
 						Soit $\theta \in \mathbb{R}, \forall n \in \mathbb{N}$, on a :
 						\begin{center}
@@ -436,6 +444,7 @@
 							\item On pourra refaire apparaître un cosinus.
 						\end{itemize}
 				\end{tcolorbox}
+				\addtocounter{exnumber}{1}
 			
 			\subsection{Niveau 3}
 			
@@ -460,7 +469,7 @@
 			\subsection{Niveau 1}
 		
 			\subsection{Niveau 2}
-			\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Inégalités et fractions]
+			\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Inégalités et fractions]
 				\paragraph{Consigne}
 						Soient $(a,b) \in \mathbb{R_+^*}^2$. Démontrer que :
 						\begin{center}
@@ -476,7 +485,8 @@
 								$\sqrt{ab} \leqslant \frac{a+b}{2}$					
 							\end{center}										
 						\end{itemize}	
-				\end{tcolorbox}											
+				\end{tcolorbox}	
+				\addtocounter{exnumber}{1}										
 		
 			\subsection{Niveau 3}
 			
@@ -487,7 +497,7 @@
 	\chapter{Analayse}
 		\section{Intégration}
 			\subsection{Niveau 1}
-				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Intégration\underline{s} par partie]
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Intégration\underline{s} par partie]
 					\paragraph{Consigne}
 						Soit :
 						\begin{center}
@@ -502,9 +512,10 @@
 							\item On pourra faire 2 intégrations par partie successives.					
 						\end{itemize}	
 				\end{tcolorbox}	
+				\addtocounter{exnumber}{1}
 		
 			\subsection{Niveau 2}
-				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Intégrales et arrondis]
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice n°\arabic{exnumber} - Intégrales et arrondis]
 					\paragraph{Consigne}
 						Soit :
 						\begin{center}
@@ -520,7 +531,8 @@
 							\item En conservant la même intégrande qu'avec $I$, faire la somme des intégrales de $k$ à $k+1$ pour $k$ variant de 0 à 99.	
 							\item Une fois la somme exprimée, il est possible de remplacer $\lfloor x \rfloor$ et $\lceil x \rceil$ par autre chose.			
 						\end{itemize}	
-				\end{tcolorbox}											
+				\end{tcolorbox}
+				\addtocounter{exnumber}{1}									
 		
 			\subsection{Niveau 3}
 			
