@@ -11,7 +11,7 @@ Ajout par Roumann
 
 \section{Exercice 71}
 \paragraph{consigne :}
-Pour t $\in$ $\Re$ on pose f(t) $=frac{1}{1+t^2}$.
+Pour t $\in$ $\Re$ on pose f(t) $=\frac{1}{1+t^2}$.
 \begin{center}
     Soit F la primitive de f nulle en 0. Pour $\frac{\pi}{2} < t <  \frac{\pi}{2}$ , on pose G(t) = F(tan(t)) 
 \end{center}
