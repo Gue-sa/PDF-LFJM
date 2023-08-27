@@ -1,0 +1,877 @@
+\documentclass[a4paper]{report}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\frenchbsetup{StandardLists=true}
+\usepackage{tcolorbox}
+\usepackage[explicit]{titlesec}
+\usepackage{color}
+\usepackage{systeme}
+
+\newlength\chapnumb
+\setlength\chapnumb{3cm}
+
+\newlength\secnumb
+\setlength\secnumb{2.5cm}
+
+\newlength\subsecnumb
+\setlength\subsecnumb{2cm}
+
+\titleformat{\chapter}[block] {
+\hspace{0pt}
+\vfill
+	\normalfont}{}{0pt} {
+    \parbox[b]{\chapnumb}{
+      \fontsize{120}{120}\selectfont\thechapter}
+      \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{
+        \raggedleft
+        \hfill{\LARGE#1}\\
+        \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}
+  }
+\vfill
+\hspace{0pt}
+}
+
+\titleformat{\section}[block] {
+  \newpage\normalfont}{}{50pt} {
+    \parbox[b]{\secnumb}{
+      \fontsize{25}{25}\selectfont\thesection}
+      \parbox[b]{\dimexpr\textwidth-\secnumb\relax}{
+        \raggedleft
+        \hfill{\LARGE#1}\\
+        \rule{\dimexpr\textwidth-\secnumb\relax}{0.2pt}
+  }
+}
+
+\titleformat{\subsection}[block] {
+  \normalfont}{}{0pt} {
+    \parbox[b]{\subsecnumb}{
+      \fontsize{15}{15}\selectfont\thesubsection}
+      \parbox[b]{\dimexpr\textwidth-\subsecnumb\relax}{
+        \raggedleft
+        \hfill{\LARGE#1}\\
+        \rule{\dimexpr\textwidth-\subsecnumb\relax}{0.1pt}
+  }
+}
+
+\title{Du LFJM à la CPGE (Mathématiques)}
+\author{Par Roumann Ramaroson et Sasha Guérin-Loison\\Relecture par Mr. Alix}
+\date{Version 1 (année 2023-2024)}
+
+\newcommand*\sepstars{%
+	\begin{center}
+		\vspace{3mm}
+  		$\star\star\star\star\star\star\star\star\star\star\star\star\star\star\star$
+		\vspace{3mm}
+  	\end{center}}
+
+\begin{document}
+
+\hspace{0pt}
+\vfill
+\begin{center}
+	!!! ATTENTION !!!\\
+	CE DOCUMENT N'EST PAS ENCORE DANS SA VERSION FINALE : LES PARTIES OU SOUS-PARTIES SONT SUSCEPTIBLES DE CHANGER, \underline{TOUT} EST INCOMPLET (il manque énormément d'exercices, ceux déjà présents ne comportent pour l'instant que les consignes et les aides et ils ne sont pas encore classés par ordre de difficulté) ET LES EXERCICES PEUVENT PRESENTER DES ERREURS !
+\end{center}
+\vfill
+\hspace{0pt}
+
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+	\section{Auteurs}
+
+		\subsection{Roumann Ramaroson}
+			Ancien élève du LFJM (pomotion 2023), actuellement en MPSI au lycée Masséna de Nice.
+			
+		\subsection{Sasha Guérin-Loison}
+			Ancien élève du LFJM (promotion 2023), actuellement en PCSI au Lycée Sainte Geneviève de Versailles.
+			
+	\section{Remerciements}
+		Un grand merci à Mr. Alix pour ses relectures et ses corrections. Au passage, un grand merci pour vos enseignements au cours de notre année de Terminale.
+		
+	\section{Objectifs du PDF}
+		Ce PDF n'a pas pour but de fous faire prendre de l'avance sur le programme de prépa, mais plutôt de vous aider, vous, élèves de lycée (ou de collège voire de primaire si vous êtes intéressés, qui sait) à consolider vos bases au maximum et d'arriver en sup avec un avant-goût de ce qui vous attend. En ce sens, vous y trouverez votre compte que vous alliez en MPSI, PCSI, EC ou BCPST. Afin d'atteindre cet objectif, vous trouverez au sein de ce document divers exercices, certains simples, d'autres exotiques, tous vous permettant de renforcer votre intuition et certaines notions utiles, mais aussi de les approfondir autant qu'il est utile pour un futur préparationnaire (en tout cas de notre point de vue). Pour les plus curieux, des liens seront mis à disposition à certains endroits judicieux. Afin de connaître plus en détail l'organisation de ce PDF, vous pouvez vous référer au paragraphe suivant. En tout cas, bonne chance pour la suite !
+		
+	\section{Organisation du PDF}
+		Ce document est séparé en 9 chapitres principaux (plus une FAQ sur la prépa pour répondre aux questions qu'un terminale peut se poser à rpopos de cette voie), chacun correspondant à une grande branche des mathématiques, ou du moins liée aux mathématiques, à savoir :
+		\begin{enumerate}
+			\item Logique
+			\item Théorie des nombres - Arithmétique
+			\item Algèbre
+			\item Analyse
+			\item Trigonométrie
+			\item Géométrie
+			\item Probabilités
+			\item Statistiques
+			\item Algorithmique
+		\end{enumerate}
+		Chacun des ces chapitres est divisé en sections, chacune correspondant à une sous-branche ou à un élément particulier relatif à la branche concernée.\\
+		Chaque section est divisée en 4 niveaux principaux de difficulté (+ un 5ème bonus), à savoir :
+		\begin{itemize}
+			\item Niveau 1 - Niveau très facile, applications directes du cours. Sert à vérifier sa compréhension d'une notion.
+			\item Niveau 2 - Niveau classique, exercices type. Sert à utiliser une notion sans pour autant avoir à trop réfléchir pour la "fixer".
+			\item Niveau 3 - Niveau avancé, exercices d'aprofondissement. Plus compliqués que ceux du niveau 2, ils permettent d'aborder d'autres aspects ou éléments liés à la notion afin d'approfondir sa compréhension.
+			\item Niveau 4 - Niveau difficile, exercices nécessitant des prises d'initiative et une réflexion plus poussée. Commence à se rapprocher de ce qui est demandé en prépa.
+			\item Niveau Bonus - Suivant l'exercice, niveau très difficile à infernal. Vrais exercices de prépa, voire de concours (bien sûr, judicieusement choisis pour être faisables par un élève de lycée motivé. Si c'est un exercice de concours, le concours et l'année de l'épreuve seront précisés).
+		\end{itemize}
+		Vous pourrez distinguer 2 types d'exercices : certains approfondissent directement des notions de terminale, d'autres servant d'introduction à une notion étudiée dans le supérieur. A noter que seules les notions faisables sans autres prérequis que le programme de terminale seront éventuellement concernées. Toutes celles impliquant une différence de niveau trop importante seront également ignorées (bien que des liens puissent être fournis pour les curieux).\\
+		Enfin, chaque exercice est susceptible de comporter les parties suivantes :
+		\begin{itemize}
+			\item Consigne - Enoncé de l'exercice donné seul et sans indications. Pris tel quel, il peut servir à faire une simulation de colle.
+			\item Aides - Indications à suivre dans l'ordre. Peuvent soit servir à se débloquer en cas de difficulté, soit faire office de consignes comme dans un exercice classique. A chaque fois, les aides fournies sont suffisantes pour résoudre l'intégralité de l'exercice de manière guidée.
+			\item Remarques - Trucs et astuces utiles et à retenir.
+			\item Eléments utiles - Rappels de propriétés ou de formules connues en terminale et utiles à l'exercice.
+			\item Introduction à [nom de la notion] - Mini leçon ou point méthode développé fourni en cas d'exercice d'introduction à une notion de sup.
+			\item Anectodes - Faits marrants et / ou intéressants sur la notion, l'épreuve de concours, etc. relative à l'exercice.
+			\item Aller plus loin - Liens et ressources utiles pour approfondir encore plus.
+		\end{itemize}
+		A noter qu'aucune correction ne sera fournie, et si vous êtes élève, vous savez très bien pourquoi. Quitte à se spoiler un exercice, autant que ce soit à travers les aides qui nécessitent un minimum de réflexion derrière pour être utiles.
+		
+	\chapter{FAQ sur la prépa}
+	
+		\pagebreak		
+			
+		\begin{tcolorbox}[colback=white,colframe=black]
+			\textbf{1 - Exemple de question}
+			\tcblower
+			Exemple de réponse
+		\end{tcolorbox}
+		
+		\vspace{7mm}
+		
+		\begin{tcolorbox}[colback=white,colframe=black]
+			\textbf{2 - Exemple de question}
+			\tcblower
+			Exemple de réponse
+		\end{tcolorbox}
+		
+	\chapter{Logique}
+	
+		\section{Quantificateurs}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Ensembles}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Raisonnements}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+	\chapter{Théorie des nombres - Arithmétique}
+	
+		\section{Divisibilité}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Congruences}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Division euclidienne}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Equations diophantiennes}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Théorèmes intéressants}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+	\chapter{Algèbre}
+	
+		\section{Structures algébriques}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Polynomes}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Suites}
+		
+			\subsection{Niveau 1}
+			
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Une suite périodique]
+				\paragraph{Consigne}
+					On fixe un entier naturel impair $a$. On considère une suite d'entiers naturels non nuls $(u_n)_{n \in \mathbb{N}}$ vérifiant, pour tout $n \in \mathbb{N}$ :
+					\vspace{3mm}
+					\begin{center}
+						$u_{n+1} = \frac{u_n}{2}$ si $u_n$ est pair.\\
+						\vspace{1mm}
+						$u_{n+1} = u_n + a$ si $u_n$ est impair.
+					\end{center}
+					\begin{enumerate}
+					
+						\item Démontrer que la suite $(u_n)_{n \in \mathbb{N}}$ prend au moins une valeur inférieure ou égale à $a$.
+						\item Démontrer qu'elle prend une infinité de fois des valeurs inférieures ou égales à $a$.
+						\item En déduire qu'elle est périodique à partir d'un certain rang.
+					\end{enumerate}
+					
+				\tcblower					
+					
+				\paragraph{Aides}
+					\begin{itemize}
+						\item Il sera bon, et ce tout au long de l'exercice, de s'appuyer sur quelques exemples afin de visualiser clairement le fonctionnement d'une telle suite.
+						\item On pourra s'intéresser à la décroissance de la suite en raisonnant par disjonction de cas et par récurrence (mais quel type de récurrence ?). Attention à poser une inégalité judicieuse.
+						\item On pourra pour ensuite raisonner par l'absurde après avoir étudié ce qu'il se passe quand $u_n$ est inférieur ou égal à $a$.
+						\item Attention à bien réfléchir sur la nature du terme minimal de la suite. Que doit-il nécessairement être ?
+						\item On pourra finalement utiliser le principe des tiroirs en gardant en tête que l'on étudie une suite.
+					\end{itemize}
+				\end{tcolorbox}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Matrices}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Nombres complexes}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Sommes}	
+		
+			\subsection{Niveau 1}
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme et fonctions trigonométriques]
+				\paragraph{Consigne}
+					Soit $\theta \in \mathbb{R}$, $\forall n \in \mathbb{N}$, on a :\\
+					\begin{center}
+						$S_n = \sum_{k=1}^{n} \cos ((2k-1)\theta)$
+					\end{center}
+					Montrer que :\\
+					\begin{center}
+						$S_n = \frac{\sin (2n \theta)}{2 \sin (\theta)}$
+					\end{center}
+					
+				\tcblower					
+					
+				\paragraph{Aides}
+					\begin{itemize}
+						\item On remarque que : $\sin (a+b)- \sin (a-b)=2 \sin (b) \cos (a)$.
+					\end{itemize}
+				\end{tcolorbox}
+				
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme et binôme]
+				\paragraph{Consigne}
+					Soit $n \in \mathbb{N}, \forall p \in [\![1;n]\!]$ on a :
+					\begin{center}
+						$T_n = \sum_{k=p}^{n} \binom{k}{p}$
+					\end{center}
+					Exprimer $T_n$.
+					
+				\tcblower					
+					
+				\paragraph{Aides}
+					\begin{itemize}
+						\item On pourra s'aider du triangle de Pascal et du binôme de Newton.
+					\end{itemize}
+				\end{tcolorbox}
+				
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme\underline{s} et binôme]
+				\paragraph{Consigne}
+					$\forall n \in \mathbb{N^*}$, on a :
+					\begin{center}
+						$T_n = \sum_{(i,j) \in [\![1;n]\!]^2} \binom{n}{i} (j+i)$
+					\end{center}
+					Exprimer $T_n$ en fonction de $n$.
+					
+				\tcblower					
+					
+				\paragraph{Aides}
+					\begin{itemize}
+						\item On pourra s'aider du résultat obtenu à l'exercice \textbf{Somme et binôme}.
+						\item Il sera en l'occurence intéressant de dériver l'égalité ainsi obtenue.
+					\end{itemize}
+				\end{tcolorbox}
+			
+			\subsection{Niveau 2}
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme et valeur absolue]
+					\paragraph{Consigne}
+						$\forall n \in \mathbb{N^*}$, on a :\\
+							\begin{center}
+								$S_n = \sum_{(i,j) \in [\![1,n]\!]^2}|i-j|$
+							\end{center}
+							Déterminer la valeur de $S_n$ en fonction de $n$.
+						
+					\tcblower
+					
+					\paragraph{Aides}
+						\begin{itemize}
+							\item On pourra s'appuyer sur la représentation graphique de la suite suivante, avec $j$ un entier naturel supérieur ou égal à 1 :
+								\begin{center}
+									$u_i = |i-j|$
+								\end{center}
+							\item Il est possible de séparer la deuxième somme en deux sommes distinctes que l'on choisira judicieusement (s'aider de l'indication précédente).
+						\end{itemize}
+				\end{tcolorbox}
+				
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Somme et trigonométrie]
+					\paragraph{Consigne}
+						Soit $\theta \in \mathbb{R}, \forall n \in \mathbb{N}$, on a :
+						\begin{center}
+							$S_n = \sum_{k=0}^{n} \binom{n}{k} \cos (k \theta)$
+						\end{center}
+						Exprimer $S_n$ en fonction de $n$ et $\theta$.
+						
+					\tcblower
+					
+					\paragraph{Aides}
+						\begin{itemize}
+							\item On pourra remplacer le cosinus par une expression plus judicieuse ici grâce aux nombres complexes.
+							\item On pourra s'aider de la formule de binôme de Newton.
+							\item On pourra faire apparaître la formule d'Euler.
+							\item Penser à la technique de l'angle moitié.
+							\item On pourra refaire apparaître un cosinus.
+						\end{itemize}
+				\end{tcolorbox}
+			
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+			
+		\section{Produits}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+		\section{Inégalités}	
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+			\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Inégalités et fractions]
+				\paragraph{Consigne}
+						Soient $(a,b) \in \mathbb{R_+^*}^2$. Démontrer que :
+						\begin{center}
+							$\frac{2}{\frac{1}{a} + \frac{1}{b}} \leqslant \sqrt{ab}$
+						\end{center}
+					
+				\tcblower					
+					
+					\paragraph{Aides}
+						\begin{itemize}
+							\item On pourra d'abord démontrer que :
+							\begin{center}
+								$\sqrt{ab} \leqslant \frac{a+b}{2}$					
+							\end{center}										
+						\end{itemize}	
+				\end{tcolorbox}											
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+	\chapter{Analayse}
+		\section{Intégration}
+			\subsection{Niveau 1}
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Intégration\underline{s} par partie]
+					\paragraph{Consigne}
+						Soit :
+						\begin{center}
+							$I(x) = \int_{0}^{x} \cos (t) e^{-t} dt$
+						\end{center}
+						Exprimer $I(x)$ en fonction de $x$.
+						
+					\tcblower					
+					
+					\paragraph{Aides}
+						\begin{itemize}
+							\item On pourra faire 2 intégrations par partie successives.					
+						\end{itemize}	
+				\end{tcolorbox}	
+		
+			\subsection{Niveau 2}
+				\begin{tcolorbox}[colback=white,colframe=black,title=Exercice - Intégrales et arrondis]
+					\paragraph{Consigne}
+						Soit :
+						\begin{center}
+							$I = \int_{0}^{100}\lfloor x \rfloor x \lceil x \rceil dx$
+						\end{center}
+						Calculer $I$.
+						
+					\tcblower					
+					
+					\paragraph{Aides}
+						\begin{itemize}
+							\item Il est possible de transformer cette intégrale en une somme d'intégrales plus simples à manipuler.
+							\item En conservant la même intégrande qu'avec $I$, faire la somme des intégrales de $k$ à $k+1$ pour $k$ variant de 0 à 99.	
+							\item Une fois la somme exprimée, il est possible de remplacer $\lfloor x \rfloor$ et $\lceil x \rceil$ par autre chose.			
+						\end{itemize}	
+				\end{tcolorbox}											
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+			
+		\section{Limites}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Continuité}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+			
+		\section{Equations différentielles}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Dérivabilité}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Convexité}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+	\chapter{Trigonométrie}
+	
+		\section{Formules d'addition et de soustraction}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Formules de duplication}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Trigonométrie et exponentielle complexe}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Formules de Carnot}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Formules de Simpson}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Formules de linéarisation}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Formules liées à la tangente de l'angle moitié}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Formules liées à l'angle double}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+	\chapter{Géométrie}
+	
+		\section{Géométrie dans le plan}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+		\section{Géométrie dans l'espace}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Géométrie et nombres complexes}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Théorèmes intéressants}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+	\chapter{Probabilités}
+	
+		\section{Dénombrement}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Probabilités conditionnelles}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Indépendance}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Union et intersection}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Lois de probabilité}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+	\chapter{Statistiques}
+	
+		\section{Paramètres de position}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Paramètres de dispersion}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Diagrammes}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+	
+	\chapter{Algorithmique}
+	
+		\section{Python}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Algorithmes intéressants}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+		
+		\section{Complexité d'un algorithme}
+		
+			\subsection{Niveau 1}
+		
+			\subsection{Niveau 2}
+		
+			\subsection{Niveau 3}
+			
+			\subsection{Niveau 4}
+			
+			\subsection{Niveau Bonus}
+
+\end{document}
