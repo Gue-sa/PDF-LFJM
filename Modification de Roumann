@@ -1,13 +1,8 @@
-Ajout par Roumann 
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
 
-\title{PDF MERMOZ}
-\author{Roumann Ramaroson}
 
 \begin{document}
 
-\maketitle
+
 
 \section{Exercice 71}
 \paragraph{consigne :}
