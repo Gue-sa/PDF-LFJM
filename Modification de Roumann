@@ -8,7 +8,7 @@
 \paragraph{consigne :}
 Pour t $\in$ $\Re$ on pose f(t) $=\frac{1}{1+t^2}$.
 \begin{center}
-    Soit F la primitive de f nulle en 0. Pour $\frac{\pi}{2} < t <  \frac{\pi}{2}$ , on pose G(t) = F(tan(t)) 
+    Soit F la primitive de f nulle en 0. Pour $-\frac{\pi}{2} < t <  \frac{\pi}{2}$ , on pose G(t) = F(tan(t)) 
 \end{center}
 
 \paragraph{1)}
@@ -27,9 +27,9 @@ Soit n $\in\mathbf{N}^*$
 \paragraph{a}
 Démontrer que $\frac{1}{n+1} \leq$ $I_n \leq \frac{e}{n+1}$
 \paragraph{b}
-En utilisant une intégration par parties, démontrer que $I_n=nI_n$$_-_1 -1$
+En utilisant une intégration par parties, démontrer que $I_n=nI_{n-1}-1$
 \paragraph{c}
-En déduire une expression de $u_n$ en fonction de $u_n_-_1$ et n
+En déduire une expression de $u_n$ en fonction de $u_{n-1}$ et n
 \paragraph{2)}
 En déduire que tous les termes de la suite $u_n$ sont entiers
 \paragraph{3)}
